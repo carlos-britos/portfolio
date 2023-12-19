@@ -1,5 +1,5 @@
 html, body {
-  font-family: var(--font-roboto);
+  font-family: var(--font-archivo);
   overflow-x: hidden;
 
   &:hover {
@@ -50,9 +50,4 @@ footer {
       color: var(--white);
     }
   }
-}
-
-h1 {
-  text-align: center;
-  margin-top: 3rem;
 }
