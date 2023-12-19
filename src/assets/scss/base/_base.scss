@@ -1,6 +1,7 @@
 html, body {
   font-family: var(--font-archivo);
   overflow-x: hidden;
+  color: var(--black);
 
   &:hover {
     &::-webkit-scrollbar-thumb {
