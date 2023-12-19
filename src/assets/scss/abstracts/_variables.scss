@@ -1,0 +1,29 @@
+:root {
+  --font-roboto: 'Roboto', Helvetica, sans-serif;
+
+  // Colors
+  --primary-50: #f1f6ff;
+	--primary-100: #e5ecff;
+	--primary-200: #ceddff;
+	--primary-200-op-20: #ccdbff33;
+	--primary-300: #a7beff;
+	--primary-400: #7694ff;
+	--primary-500: #3f5fff;
+	--primary-500-op-10: #3d5eff1a;
+	--primary-600: #1831ff;
+	--primary-700: #0722fa;
+	--primary-800: #051cd2;
+	--primary-900: #0618ac;
+	--primary-950: #001278;
+
+	--bg-transparent: #ccdbff80;
+	--bg-transparent-90: #ccdbffe6;
+
+	--black: #1a1a1a;
+	--black-op-10: #1a1a1a1a;
+	--white: #f2f2f2;
+	--white-op-10: #f2f2f21a;
+
+	--primary: var(--primary-500);
+	--secondary: var(--secondary-950);
+}
