@@ -18,12 +18,65 @@
         font-size: 2.3rem;
         margin-bottom: 0.5rem;
         font-weight: 500;
+
+        .name {
+          font-size: 1.5rem;
+        }
+
+        .range {
+          font-weight: 400;
+          color: var(--neutral-500);
+          font-size: 3rem;
+
+          .ui {
+            font-weight: 700;
+            color: var(--accent);
+            display: inline-block;
+            transition: .5s;
+          }
+
+          &:hover {
+            .ui {
+              transform: translateY(-10px);
+            }
+          }
+        }
       }
 
       &__description {
         color: var(--lt-color-gray-600);
-        font-weight: 500;
+        font-weight: 400;
       }
+    }
+  }
+
+  &__img {
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      
+    }
+
+    &::before {
+      width: 100%;
+      height: 20px;
+      background: hsl(0deg 0% 10% / 80%);
+      bottom: -70px;
+      filter: blur(30px);
+    }
+
+    &::after {
+      width: 80%;
+      height: 6px;
+      background: hsl(0deg 0% 20% / 70%);
+      bottom: -65px;
+      filter: blur(7px);
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 
