@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Icon } from '../icons/Icon';
-// import { Logo } from '../icons/Logo';
 import { MenuMobile } from '../reusable/MenuMobile';
 import { NavDesktop } from '../reusable/NavDesktop';
 import { Link } from 'react-router-dom'

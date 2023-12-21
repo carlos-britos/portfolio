@@ -6,6 +6,7 @@
   --primary-50: #f1f6ff;
 	--primary-100: #e5ecff;
 	--primary-200: #ceddff;
+	--primary-200-op-50:#ccdbff80;
 	--primary-200-op-20: #ccdbff33;
 	--primary-300: #a7beff;
 	--primary-400: #7694ff;
@@ -32,13 +33,14 @@
 
 	--accent: #ff8e24;
 
-	--bg-transparent: #ccdbff80;
+	--bg-transparent: var(--primary-200-op-50);
 	--bg-transparent-90: #ccdbffe6;
 
 	--black: #1a1a1a;
 	--black-op-10: #1a1a1a1a;
 	--white: #f2f2f2;
 	--white-op-10: #f2f2f21a;
+	--white-op-80: #f2f2f2cc;
 
 	--primary: var(--primary-500);
 	--secondary: var(--secondary-950);

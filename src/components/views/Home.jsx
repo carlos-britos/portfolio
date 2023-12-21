@@ -35,7 +35,7 @@ function Home() {
           </div>
           <div className="hero__img">
             {/* TODO: Optimizar imagen */}
-            <img src={heroImage} alt="" />
+            <img src={heroImage} alt="" decoding='async' loading='lazy'/>
           </div>
         </div>
       </section>
@@ -47,7 +47,7 @@ function Home() {
           <div className="wrapper">
             <div className="card">
               {/* TODO: Optimizar y mejorar la imagen */}
-              <img src={inergioImage} alt="Pantallazo principal de la web inergio.com.ar" />
+              <img src={inergioImage} alt="Pantallazo principal de la web inergio.com.ar" decoding='async' loading='lazy'/>
               <div className="info">
                 <div className="info__title">Inergio</div>
 
