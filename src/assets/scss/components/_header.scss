@@ -34,6 +34,24 @@
 			font-weight: 700;
 			line-height: 1;
 			padding: 0;
+			display: flex;
+
+			span {
+				display: inline-block;
+				overflow: hidden;
+				max-width: 0;
+				transition: max-width .3s;
+			}
+
+			&:hover {
+				span {
+					max-width: 200px;
+
+					&:first-child {
+						margin-right: .5rem
+					}
+				}
+			}
 
 			@media (min-width: 992px) {
 				padding: 0 1rem;

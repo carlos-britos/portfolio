@@ -24,7 +24,8 @@ function Header() {
       <div className="header__wrapper">
         {!isDesktop && <MenuMobile />}
         <Link to='/' className="header__logo header__logo--font">
-          CB
+          C<span>arlos </span>
+          B<span>ritos</span>
           {/* <Icon iconSvg={<Logo />} /> */}
         </Link>
         {isDesktop && <NavDesktop />}
