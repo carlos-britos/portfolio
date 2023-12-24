@@ -7,68 +7,83 @@ import { Bubbles } from './components/shared/Bubbles'
 
 
 function App() {
-  const [scrolled, setScrolled] = useState('');
-  const [scrolledUp, setScrolledUp] = useState('');
-  const [step, setStep] = useState(0);
-  const [positions, setPositions] = useState([])
+  // Array de secciones
+  const [sections, setSections] = useState([])
+  // Array con la posicion de las secciones
+  const [sectionsPosition, setSectionsPosition] = useState([])
+  // Step Actual
+  const [step, setStep] = useState(0)
+
+  // Bollean scroll
+  const [scrolled, setScrolled] = useState(false)
+  // Bollean scrollUp
+  const [scrolledUp, setScrolledUp] = useState(false)
+  // Guarda el valor del scroll actual 
   const prevScrollYRef = useRef(0);
 
+  // Setea sections
+  useEffect(() => {
+    const arraySections = Array.from(document.querySelector('main').children);
+    setSections(arraySections)
+  }, [])
+
+  // Setea sectionsPosition cuando cambia sections
+  useEffect(() => {
+    const sectionsTopPosition = sections.map((section) => {
+      const sectionTop = section.getBoundingClientRect().top - 150;
+      return sectionTop
+    })
+    
+    setSectionsPosition(sectionsTopPosition)
+  }, [sections])
+
+  // Checkea la posicion y setea Step cuando cambia sectionsPosition || También setea si el header se debe mostrar o no
   useEffect(() => {
     const handleScroll = () => {
-
-      
       const scrollY = window.scrollY;
-
-      if (scrollY < 1) {
-        setScrolled('');
-        setScrolledUp('');
-      } else if (scrollY > 60) {
-        setScrolled('scrolled');
-
-        // Comparar scrollY con prevScrollY para determinar si el scroll está subiendo
-        setScrolledUp(scrollY < prevScrollYRef.current ? 'scrolled-up' : '');
-      } else {
-        setScrolled('');
-        setScrolledUp('');
-      }
-
-      const step1 =  (positions[1].top - 100)
       
-      if (scrollY >= 0 && scrollY < step1 ) {
-        setStep(0)
-      } else if (scrollY >= step1 ) {
-        setStep(1)
+      checkStep(scrollY)
+      checkShowHeader(scrollY)
+    }
+
+    // Mira en step deberia estar y lo setea
+    const checkStep = (scrollY) => {
+      const indexElement = sectionsPosition.findIndex(
+        (scroll, index, array) => 
+          scrollY >= scroll && ( index === array.length - 1 || scrollY < array[index + 1] )
+        );
+  
+      setStep(indexElement !== -1 ? indexElement : 0);
+    }
+
+    // Mira si se hizo scroll hacia arriba o abajo y setea las clases del header
+    const checkShowHeader = (scrollY) => {
+      if (scrollY === 0) {
+        setScrolled(false)
+        setScrolledUp(false)
+      }
+      else if (scrollY >= 1) {
+        setScrolled(true)
+
+        if (scrollY < prevScrollYRef.current) {
+          setScrolledUp(true)  
+        } else {
+          setScrolledUp(false)
+        }
       }
 
-      // Actualizar el valor anterior del scroll utilizando el ref
-      prevScrollYRef.current = scrollY;
-    };
-
-    // Suscribirse al evento de desplazamiento
+      prevScrollYRef.current = scrollY
+    }
+    
     window.addEventListener('scroll', handleScroll);
 
-    // Limpiar el evento al desmontar el componente
     return () => {
       window.removeEventListener('scroll', handleScroll);
-    };
-  }, [positions]);
+    }
+  }, [sectionsPosition])
 
-  useEffect(() => {
-    const sections = Array.from(document.querySelector('main').children);
-
-    const topPositions = sections.map((section, index) => {
-      const top = section.getBoundingClientRect().top;
-
-      return { 
-        top: top, index
-      };
-    });
-
-    setPositions(topPositions)
-  }, []);
-  
   return (
-    <div className={`App ${scrolled} ${scrolledUp} step-${step}`}>
+    <div className={`App step-${step} ${scrolled ? 'scrolled' : ''} ${scrolledUp ? 'scrolled-up' : ''}`}>
       {/* Header */}
       <Header />
 
