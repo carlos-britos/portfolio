@@ -17,11 +17,10 @@ function BothImages({ changeImage }, ref) {
   }));
   
   return(
-    <div className={`images ${isDesktop ? 'show' : ''}`}>
+    <div className={`images ${isDesktop ? 'is-desktop' : ''}`}>
       {/* TODO: Optimizar y mejorar la imagen */}
-      {/* TODO: Hacer imagenes con alto y ancho dinamico con js */}
-      <img className={`img-mobile ${isDesktop ? '' : 'show'}`} src={inergioImage} alt="Pantallazo principal de la web inergio.com.ar" decoding='async' loading='lazy'/>
-      <img className={`img-desktop ${isDesktop ? 'show' : ''}`} src={inergioDesktopImage} alt="Pantallazo principal de la web inergio.com.ar" decoding='async' loading='lazy'/>
+      <img className="img-mobile" src={inergioImage} alt="Pantallazo principal de la web inergio.com.ar" decoding='async' loading='lazy'/>
+      <img className="img-desktop" src={inergioDesktopImage} alt="Pantallazo principal de la web inergio.com.ar" decoding='async' loading='lazy'/>
     </div>
   )
 }
@@ -71,6 +70,116 @@ function Home() {
           <div className="hero__img">
             {/* TODO: Optimizar imagen */}
             <img src={heroImage} alt="" decoding='async' loading='lazy'/>
+          </div>
+        </div>
+      </section>
+
+      
+      <section className='projects freelance'>
+        <h1 className='projects__title'>Proyectos freelance</h1>
+
+        {/* TODO: agregar swiper */}
+        <div className="cards">
+          <div className="wrapper">
+            {loop.map((item, index) => (
+            
+              <div key={item} className="card">
+                <ForwardedBothImages ref={imageRefs[index]} />
+                
+                <div className="info__wrapper">
+                  <div className="info">
+                    <div className="info__buttons">
+                      <div className="change-view" onClick={() => callChangeImage(index)}>
+                        Ver desktop
+                      </div>
+                      <div className="github">
+                        Github
+                      </div>
+                    </div>
+                    <div className="info__title">Inergio</div>
+                    <div className="info__description">
+                      Landing web creada para conocer sus servicios y contactar de forma rapida y sencilla
+                    </div>
+                    <div className="info__tecnologies">
+                      {/* TODO: Pasar a chips */}
+                      React Sass / CSS Vite
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className='projects freelance'>
+        <h1 className='projects__title'>Proyectos freelance</h1>
+
+        {/* TODO: agregar swiper */}
+        <div className="cards">
+          <div className="wrapper">
+            {loop.map((item, index) => (
+            
+              <div key={item} className="card">
+                <ForwardedBothImages ref={imageRefs[index]} />
+                
+                <div className="info__wrapper">
+                  <div className="info">
+                    <div className="info__buttons">
+                      <div className="change-view" onClick={() => callChangeImage(index)}>
+                        Ver desktop
+                      </div>
+                      <div className="github">
+                        Github
+                      </div>
+                    </div>
+                    <div className="info__title">Inergio</div>
+                    <div className="info__description">
+                      Landing web creada para conocer sus servicios y contactar de forma rapida y sencilla
+                    </div>
+                    <div className="info__tecnologies">
+                      {/* TODO: Pasar a chips */}
+                      React Sass / CSS Vite
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className='projects freelance'>
+        <h1 className='projects__title'>Proyectos freelance</h1>
+
+        {/* TODO: agregar swiper */}
+        <div className="cards">
+          <div className="wrapper">
+            {loop.map((item, index) => (
+            
+              <div key={item} className="card">
+                <ForwardedBothImages ref={imageRefs[index]} />
+                
+                <div className="info__wrapper">
+                  <div className="info">
+                    <div className="info__buttons">
+                      <div className="change-view" onClick={() => callChangeImage(index)}>
+                        Ver desktop
+                      </div>
+                      <div className="github">
+                        Github
+                      </div>
+                    </div>
+                    <div className="info__title">Inergio</div>
+                    <div className="info__description">
+                      Landing web creada para conocer sus servicios y contactar de forma rapida y sencilla
+                    </div>
+                    <div className="info__tecnologies">
+                      {/* TODO: Pasar a chips */}
+                      React Sass / CSS Vite
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

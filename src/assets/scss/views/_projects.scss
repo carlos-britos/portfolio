@@ -1,6 +1,22 @@
 .projects {
-  --image-mobile-width: 300px;
-  --image-desktop-width: 853px;
+  --height: 200px;
+  --height-md: 460px;
+  --height-lg: 528px;
+
+  --image-mobile-width: calc(var(--height) * 0.5625);
+  --image-desktop-width: calc(var(--height) * 1.6);
+
+  @media (min-width: 768px) {
+    --image-mobile-width: calc(var(--height-md) * 0.5625);
+    --image-desktop-width: calc(var(--height-md) * 1.6);
+  }
+
+  @media (min-width: 992px) {
+    --image-mobile-width: calc(var(--height-lg) * 0.5625);
+    --image-desktop-width: calc(var(--height-lg) * 1.6);
+  }
+
+
 
   &__title {
     max-width: 1200px;
@@ -24,22 +40,42 @@
 
       .card {
         position: relative;
-        display: flex;
+        display: block;
         gap: 2rem;
 
+        @media (min-width: 992px) {
+          display: flex;
+        }
+
         .images {
+          // El standar es 
+          // Mobile: 360x640
+          // Desktop: 1280x800 // 1024x640
+
+          // Mobile: 0.5625
+          // Desktop: 1.6
+
           position: relative;
           width: var(--image-mobile-width);
           min-width: var(--image-mobile-width);
-          height: 528px;
+          height: var(--height);
           transform-style: preserve-3d;
           perspective: 100px;
+          margin: auto;
 
-          &.show {
+          @media (min-width: 768px) {
+            height: var(--height-md);
+          }
+        
+          @media (min-width: 992px) {
+            height: var(--height-lg);
+          }
+
+          &.is-desktop {
             animation: imageToDesktop .6s forwards;
           }
 
-          &:not(.show) {
+          &:not(.is-desktop) {
             animation: imageToMobile .8s forwards;
           }
         }
