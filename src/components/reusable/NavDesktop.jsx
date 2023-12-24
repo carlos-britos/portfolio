@@ -1,5 +1,5 @@
 import { Icon } from '../icons/Icon';
-// import { Instagram } from './icons/Instagram';
+import { Translate } from '../icons/Translate';
 import { Link } from 'react-router-dom'
 
 function NavDesktop() {
@@ -8,7 +8,8 @@ function NavDesktop() {
       <Link className="c-btn c-btn-contained-primary not-pill" to="/contacto">
         Contacto
       </Link>
-      <Link className="item" to="/">
+      <Link className="item c-button" to="/">
+        <Icon iconSvg={<Translate />} />
         Idioma
       </Link>
       <Link className="item" to="/">
