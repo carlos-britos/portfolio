@@ -1,5 +1,10 @@
 import heroImage from '../../assets/images/hero-image.jpg'
 import { SectionProjects } from '../shared/SectionProjects'
+import { Icon } from '../icons/Icon';
+import { Download } from '../icons/Download';
+import { Github } from '../icons/Github';
+import { LinkedIn } from '../icons/LinkedIn';
+import { Link } from 'react-router-dom'
 
 function Home() {
   return (
@@ -21,12 +26,18 @@ function Home() {
             </h3>
 
             <div className="info__actions">
-              <div className="cv">
+              <div className="cv c-button c-button--with-icon">
+                <Icon iconSvg={<Download />} />
                 Descargar cv
               </div>
 
               <div className="networks">
-                Github, LinkedIn
+                <Link to="https://github.com/carlos-britos" target="_blank" className="c-button c-button--only-icon">
+                  <Icon iconSvg={<Github />} />
+                </Link>
+                <Link to="https://www.linkedin.com/in/carlos-britos-398aa620a/" target="_blank" className="c-button c-button--only-icon">
+                  <Icon iconSvg={<LinkedIn />} />
+                </Link>
               </div>
             </div>
           </div>
