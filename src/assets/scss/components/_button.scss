@@ -14,6 +14,14 @@
         padding: 0.4rem 0.4rem 0.4rem 0.8rem;
       }
     }
+
+    &--only-icon {
+      padding: 0.4rem 0.6rem;
+    }
+
+    .icon-svg {
+      height: 24px;
+    }
   }
 
   &:hover {
