@@ -10,16 +10,16 @@ function NavDesktop() {
   const [darkMode, setDarkMode] = useState(false)
   return (
     <div className='header-nav'>
-      <Link className="c-btn c-btn-contained-primary not-pill" to="/contacto">
+      <Link className="c-button c-button--text" to="/contacto">
         Contacto
       </Link>
-      <Link className="item c-button c-button--with-icon both" to="/">
+      <Link className="item c-button c-button--outlined c-button--with-icon both" to="/">
         <Icon iconSvg={<Translate />} />
         {/* TODO: Dinamizar idioma */}
         Español
         <Icon iconSvg={<ChevronDown />} />
       </Link>
-      <Link className="item c-button c-button--with-icon" to="/" onClick={() => setDarkMode(!darkMode)}>
+      <Link className="item c-button c-button--outlined c-button--with-icon" to="/" onClick={() => setDarkMode(!darkMode)}>
         {darkMode ? <Icon iconSvg={<LightMode />} /> : <Icon iconSvg={<DarkMode />} />}
         {darkMode ? 'Light Mode' : 'Dark Mode'}
       </Link>

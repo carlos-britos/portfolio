@@ -21,11 +21,11 @@ function ProjectPreview() {
       <div className="info__wrapper">
         <div className="info">
           <div className="info__buttons">
-            <div className="change-view c-button c-button--with-icon" onClick={() => setShowPreviewDesktop(!showPreviewDesktop)}>
+            <div className="change-view c-button c-button--outlined c-button--with-icon" onClick={() => setShowPreviewDesktop(!showPreviewDesktop)}>
               { showPreviewDesktop ? <Icon iconSvg={<Mobile />} /> : <Icon iconSvg={<Desktop />} /> }
               { showPreviewDesktop ? 'Ver mobile' : 'Ver desktop'}
             </div>
-            <div className="github c-button c-button--only-icon">
+            <div className="github c-button c-button--outlined c-button--only-icon">
               <Icon iconSvg={<Github />} />
             </div>
           </div>
@@ -35,7 +35,15 @@ function ProjectPreview() {
           </div>
           <div className="info__tecnologies">
             {/* TODO: Pasar a chips */}
-            React Sass / CSS Vite
+            <div className="chip">
+              React
+            </div>
+            <div className="chip">
+              Sass / CSS
+            </div>
+            <div className="chip">
+              Vite
+            </div>
           </div>
         </div>
       </div>

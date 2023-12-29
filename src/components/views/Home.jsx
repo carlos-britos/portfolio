@@ -26,16 +26,16 @@ function Home() {
             </h3>
 
             <div className="info__actions">
-              <div className="cv c-button c-button--with-icon">
+              <div className="cv c-button c-button--outlined c-button--with-icon">
                 <Icon iconSvg={<Download />} />
                 Descargar cv
               </div>
 
               <div className="networks">
-                <Link to="https://github.com/carlos-britos" target="_blank" className="c-button c-button--only-icon">
+                <Link to="https://github.com/carlos-britos" target="_blank" className="c-button c-button--outlined c-button--only-icon">
                   <Icon iconSvg={<Github />} />
                 </Link>
-                <Link to="https://www.linkedin.com/in/carlos-britos-398aa620a/" target="_blank" className="c-button c-button--only-icon">
+                <Link to="https://www.linkedin.com/in/carlos-britos-398aa620a/" target="_blank" className="c-button c-button--outlined c-button--only-icon">
                   <Icon iconSvg={<LinkedIn />} />
                 </Link>
               </div>
@@ -48,7 +48,9 @@ function Home() {
         </div>
       </section>
 
-      <SectionProjects />
+      <SectionProjects title="Proyectos freelance" classes="freelance" />
+      <SectionProjects title="Proyectos de práctica" classes="practice" />
+      <SectionProjects title="Clones" classes="clone" />
     </main>
   )
 }

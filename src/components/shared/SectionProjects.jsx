@@ -1,12 +1,13 @@
+import PropTypes from 'prop-types';
 import { ProjectPreview } from "./ProjectPreview"
 
-function SectionProjects() {
+function SectionProjects({ title, classes }) {
   // TODO: Eliminar cuando se agreguen los proyectos
-  const loop = [1,2,3,4,5,6,7,8]
+  const loop = [1,2,3,4]
 
   return (
-    <section className='projects freelance'>
-      <h1 className='projects__title'>Proyectos freelance</h1>
+    <section className={`projects ${classes}`}>
+      <h1 className='projects__title'>{ title }</h1>
 
       <div className="cards">
         <div className="wrapper">
@@ -18,5 +19,10 @@ function SectionProjects() {
     </section>
   )
 }
+
+SectionProjects.propTypes = {
+  title: PropTypes.string.isRequired,
+  classes: PropTypes.string.isRequired,
+};
 
 export { SectionProjects }
