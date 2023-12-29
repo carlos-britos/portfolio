@@ -1,6 +1,7 @@
 :root {
-  --menu-mobile-background: #ccdbffcc;
-  --menu-mobile-effect-decoration: var(--deep-koamaru-500);
+	--menu-mobile-background-accent: var(--primary-200-op-50);
+  --menu-mobile-background: var(--primary-200-op-40);
+  --menu-mobile-effect-decoration: var(--primary-400);
   --menu-mobile-burger-button: var(--deep-koamaru-950);
   --menu-mobile-hover-on-button: var(--deep-koamaru-950);
   --menu-mobile-text-and-icons: var(--black);
@@ -32,7 +33,7 @@
 	}
 
 	&::before {
-		background: var(--menu-mobile-background);
+		background: var(--menu-mobile-background-accent);
 		width: 70%;
 		height: 70%;
 		top: 0%;
