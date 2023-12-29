@@ -1,6 +1,10 @@
 import inergioImage from '../../assets/images/inergio.png'
 import inergioDesktopImage from '../../assets/images/inergio-desktop.png'
 import { useState } from 'react'
+import { Icon } from '../icons/Icon'
+import { Desktop } from '../icons/Desktop'
+import { Mobile } from '../icons/Mobile'
+import { Github } from '../icons/Github'
 
 function ProjectPreview() {
   const [showPreviewDesktop, setShowPreviewDesktop] = useState(false)
@@ -17,11 +21,12 @@ function ProjectPreview() {
       <div className="info__wrapper">
         <div className="info">
           <div className="info__buttons">
-            <div className="change-view" onClick={() => setShowPreviewDesktop(!showPreviewDesktop)}>
+            <div className="change-view c-button c-button--with-icon" onClick={() => setShowPreviewDesktop(!showPreviewDesktop)}>
+              { showPreviewDesktop ? <Icon iconSvg={<Mobile />} /> : <Icon iconSvg={<Desktop />} /> }
               { showPreviewDesktop ? 'Ver mobile' : 'Ver desktop'}
             </div>
-            <div className="github">
-              Github
+            <div className="github c-button c-button--only-icon">
+              <Icon iconSvg={<Github />} />
             </div>
           </div>
           <div className="info__title">Inergio</div>
