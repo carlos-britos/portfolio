@@ -2,30 +2,42 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  border: 1px solid var(--black-op-10);
   border-radius: 0.5rem;
   transition: .3s;
+  padding: .8rem;
   
   &.c-button {
     &--with-icon {
-      padding: 0.4rem 0.8rem;
+      padding: .4rem .8rem;
       
       &.both {
-        padding: 0.4rem 0.4rem 0.4rem 0.8rem;
+        padding: .4rem .4rem .4rem .8rem;
       }
     }
 
     &--only-icon {
-      padding: 0.4rem 0.6rem;
+      padding: .4rem .6rem;
     }
 
     .icon-svg {
       height: 24px;
     }
+
+    &--outlined {
+      border: 1px solid var(--black-op-10);
+    }
+
+    &--text {
+      border: none;
+
+      &:hover {
+        box-shadow: none;
+      }
+    }
   }
 
   &:hover {
-    background: var(--white-op-10);
+    background: var(--primary-500-op-10);
     box-shadow: 0 1px 8px -3px #1a1a1a33;
   }
 }
