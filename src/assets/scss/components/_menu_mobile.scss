@@ -1,10 +1,20 @@
-:root {
+html {
 	--menu-mobile-background-accent: var(--primary-200-op-50);
   --menu-mobile-background: var(--primary-200-op-40);
   --menu-mobile-effect-decoration: var(--primary-400);
   --menu-mobile-burger-button: var(--deep-koamaru-950);
   --menu-mobile-hover-on-button: var(--deep-koamaru-950);
   --menu-mobile-text-and-icons: var(--black);
+  --menu-mobile-hover-on-category: var(--deep-koamaru-500-op-10);
+}
+
+html[data-theme="dark"] {
+	--menu-mobile-background-accent: var(--neutral-950);
+  --menu-mobile-background: var(--neutral-950-op-80);
+  --menu-mobile-effect-decoration: var(--primary-400);
+  --menu-mobile-burger-button: var(--deep-koamaru-950);
+  --menu-mobile-hover-on-button: var(--deep-koamaru-950);
+  --menu-mobile-text-and-icons: var(--white);
   --menu-mobile-hover-on-category: var(--deep-koamaru-500-op-10)
 }
 
@@ -22,7 +32,7 @@
 	transition: .4s;
 	box-shadow: rgba(17, 17, 26, 0.1) 1px 0px 0px, rgba(17, 17, 26, 0.1) 8px 0px 24px, rgba(17, 17, 26, 0.1) 16px 0 48px;
 	overflow-x: hidden;
-  color: var(--menu-mobile-text-and-icons);
+  color: var(--white);
 
 	&::before,
 	&::after {

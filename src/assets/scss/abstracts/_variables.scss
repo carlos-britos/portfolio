@@ -31,10 +31,10 @@
 	--neutral-800: #434347;
 	--neutral-900: #3b3b3e;
 	--neutral-950: #242428;
+	--neutral-950-op-80: #242428cc;
 
 	--accent: #ff8e24;
 
-	--bg-transparent: var(--primary-200-op-50);
 	--bg-transparent-90: #ccdbffe6;
 
 	--black: #1a1a1a;
@@ -45,4 +45,50 @@
 
 	--primary: var(--primary-500);
 	--secondary: var(--secondary-950);
+
+}
+
+/* Variables de color si el tema es nulo o light */
+html {
+  --background-body: var(--white-op-80);
+	--color-body: var(--black);
+	--color-icon-default: var(--black);
+	--button-outlined: var(--black-op-10);
+	--special-text-home: var(--neutral-500);
+	--sub-special-text-home: var(--neutral-600);
+
+	--bg-transparent: var(--primary-200-op-50);
+	
+	// Bubbles
+	--bubble-red: #FF5722;
+	--bubble-blue: #2196f3;
+	--bubble-green: #4CAF50;
+
+	// Chips
+	--chip-primary-background: var(--primary-200-op-50);
+	--chip-primary-color: var(--primary-500);
+
+}
+
+/* Variables de color si el tema es dark */
+html[data-theme="dark"] {
+	--background-body: var(--neutral-950-op-80);
+	--color-body: var(--white);
+	--color-icon-default: var(--white);
+	--button-outlined: var(--white-op-10);
+	--special-text-home: var(--neutral-400);
+	--sub-special-text-home: var(--neutral-300);
+	
+	--bg-transparent: var(--primary-500-op-10);
+	
+	// Bubbles
+	--bubble-red: #b33109;
+	--bubble-blue: #0b3150;
+	--bubble-green: #266e28;
+
+	// Chips
+	--chip-primary-background: var(--primary-200-op-20);
+	--chip-primary-color: var(--primary-300);
+
+	background: var(--black);
 }

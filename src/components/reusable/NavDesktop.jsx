@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Icon } from '../icons/Icon';
 import { Translate } from '../icons/Translate';
 import { ChevronDown } from '../icons/ChevronDown';
@@ -7,7 +7,24 @@ import { LightMode } from '../icons/LightMode';
 import { Link } from 'react-router-dom'
 
 function NavDesktop() {
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(localStorage.getItem("theme") === "dark" ? true : false);
+
+  useEffect(() => {
+    document
+      .getElementsByTagName("HTML")[0]
+      .setAttribute("data-theme", localStorage.getItem("theme"));
+  }, [darkMode]);
+
+  const toggleThemeChange = () => {
+    if (darkMode === false) {
+      localStorage.setItem("theme", "dark");
+      setDarkMode(true);
+    } else {
+      localStorage.setItem("theme", "light");
+      setDarkMode(false);
+    }
+  };
+  
   return (
     <div className='header-nav'>
       <Link className="c-button c-button--text" to="/contacto">
@@ -19,7 +36,7 @@ function NavDesktop() {
         Español
         <Icon iconSvg={<ChevronDown />} />
       </Link>
-      <Link className="item c-button c-button--outlined c-button--with-icon" to="/" onClick={() => setDarkMode(!darkMode)}>
+      <Link className="item c-button c-button--outlined c-button--with-icon" to="/" onClick={() => toggleThemeChange()}>
         {darkMode ? <Icon iconSvg={<LightMode />} /> : <Icon iconSvg={<DarkMode />} />}
         {darkMode ? 'Light Mode' : 'Dark Mode'}
       </Link>

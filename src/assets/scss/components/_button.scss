@@ -24,7 +24,7 @@
     }
 
     &--outlined {
-      border: 1px solid var(--black-op-10);
+      border: 1px solid var(--button-outlined);
     }
 
     &--text {
@@ -40,4 +40,8 @@
     background: var(--primary-500-op-10);
     box-shadow: 0 1px 8px -3px #1a1a1a33;
   }
+}
+
+.icon-svg {
+  fill: var(--color-icon-default);
 }
