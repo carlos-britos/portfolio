@@ -115,7 +115,7 @@ function MenuMobile({ darkMode, toggleThemeChange }) {
             <Icon iconSvg={<ChevronLeft />} />
           </button>
 
-          <Link to='/' className="header__logo header__logo--font">
+          <Link to='/portfolio/' className="header__logo header__logo--font">
             CB
             {/* <Icon iconSvg={<Logo />} /> */}
           </Link>
@@ -128,7 +128,7 @@ function MenuMobile({ darkMode, toggleThemeChange }) {
         <div className="c-menu__list">
           <ul className={`menu-list menu-list--step-1 ${menuState.currentStep > 1 ? 'prev' : ''}`}>
 
-            <Link className="list-item" to="/">
+            <Link className="list-item" to="/portfolio/">
               Inicio
             </Link>
 
@@ -140,16 +140,16 @@ function MenuMobile({ darkMode, toggleThemeChange }) {
               </div>
             </div> */}
 
-            <Link className="list-item" to="/">
+            <Link className="list-item" to="/portfolio/">
               Idioma
             </Link>
-            <Link className="list-item list-item--with-icon" to="/" onClick={() => toggleThemeChange()}>
+            <Link className="list-item list-item--with-icon" to="/portfolio/" onClick={() => toggleThemeChange()}>
               {darkMode ? <Icon iconSvg={<LightMode />} /> : <Icon iconSvg={<DarkMode />} />}
               {darkMode ? 'Light Mode' : 'Dark Mode'}
             </Link>
-            <Link className="list-item" to="/contacto">
+            {/* <Link className="list-item" to="/contacto">
               Contacto
-            </Link>
+            </Link> */}
           </ul>
 
           {/* <div className={`menu-list menu-list--step-2 ${menuState.currentStep < 2 ? 'next' : (menuState.currentStep > 2 

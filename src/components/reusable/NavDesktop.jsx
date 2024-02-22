@@ -11,16 +11,16 @@ function NavDesktop({ darkMode, toggleThemeChange }) {
   
   return (
     <div className='header-nav'>
-      <Link className="c-button c-button--text" to="/contacto">
+      {/* <Link className="c-button c-button--text" to="/contacto">
         Contacto
-      </Link>
-      <Link className="item c-button c-button--outlined c-button--with-icon both" to="/">
+      </Link> */}
+      <Link className="item c-button c-button--outlined c-button--with-icon both" to="/portfolio/">
         <Icon iconSvg={<Translate />} />
         {/* TODO: Dinamizar idioma */}
         Español
         <Icon iconSvg={<ChevronDown />} />
       </Link>
-      <Link className="item c-button c-button--outlined c-button--with-icon" to="/" onClick={() => toggleThemeChange()}>
+      <Link className="item c-button c-button--outlined c-button--with-icon" to="/portfolio/" onClick={() => toggleThemeChange()}>
         {darkMode ? <Icon iconSvg={<LightMode />} /> : <Icon iconSvg={<DarkMode />} />}
         {darkMode ? 'Light Mode' : 'Dark Mode'}
       </Link>
