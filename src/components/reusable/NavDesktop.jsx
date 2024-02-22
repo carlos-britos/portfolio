@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 import { Icon } from '../icons/Icon';
 import { Translate } from '../icons/Translate';
 import { ChevronDown } from '../icons/ChevronDown';
@@ -6,24 +6,8 @@ import { DarkMode } from '../icons/DarkMode';
 import { LightMode } from '../icons/LightMode';
 import { Link } from 'react-router-dom'
 
-function NavDesktop() {
-  const [darkMode, setDarkMode] = useState(localStorage.getItem("theme") === "dark" ? true : false);
-
-  useEffect(() => {
-    document
-      .getElementsByTagName("HTML")[0]
-      .setAttribute("data-theme", localStorage.getItem("theme"));
-  }, [darkMode]);
-
-  const toggleThemeChange = () => {
-    if (darkMode === false) {
-      localStorage.setItem("theme", "dark");
-      setDarkMode(true);
-    } else {
-      localStorage.setItem("theme", "light");
-      setDarkMode(false);
-    }
-  };
+// TODO: Pasar a const
+function NavDesktop({ darkMode, toggleThemeChange }) {
   
   return (
     <div className='header-nav'>

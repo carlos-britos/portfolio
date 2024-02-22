@@ -5,8 +5,10 @@ import { MenuBurgerButton } from '../icons/MenuBurgerButton';
 import { ChevronLeft } from '../icons/ChevronLeft';
 import { CloseButton } from '../icons/CloseButton';
 import { Link } from 'react-router-dom'
+import { DarkMode } from '../icons/DarkMode';
+import { LightMode } from '../icons/LightMode';
 
-function MenuMobile() {
+function MenuMobile({ darkMode, toggleThemeChange }) {
   const [menuState, setMenuState] = useState({
     currentStep: 1,
     categoryToShow: null,
@@ -52,6 +54,7 @@ function MenuMobile() {
   }, [menuState.currentStep]);
 
   const openMenu = () => {
+    document.documentElement.style.overflow = 'hidden';
     document.body.classList.add('menu-open');
 
     setMenuState((prevState) => ({
@@ -61,6 +64,7 @@ function MenuMobile() {
   };
 
   const closeMenu = () => {
+    document.documentElement.style.overflow = 'auto';
     document.body.classList.remove('menu-open');
     
     resetMenu();
@@ -139,8 +143,9 @@ function MenuMobile() {
             <Link className="list-item" to="/">
               Idioma
             </Link>
-            <Link className="list-item" to="/">
-              Dark Mode
+            <Link className="list-item list-item--with-icon" to="/" onClick={() => toggleThemeChange()}>
+              {darkMode ? <Icon iconSvg={<LightMode />} /> : <Icon iconSvg={<DarkMode />} />}
+              {darkMode ? 'Light Mode' : 'Dark Mode'}
             </Link>
             <Link className="list-item" to="/contacto">
               Contacto

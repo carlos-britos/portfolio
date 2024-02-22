@@ -5,7 +5,7 @@ import { Mobile } from '../icons/Mobile'
 import { Desktop } from '../icons/Desktop'
 
 
-function ProjectPreview({ imgMobile, imgDesktop, alt, title, description, tecnologies }) {
+function ProjectPreview({ imgMobile, imgDesktop, alt, title, description, tecnologies, github }) {
   const [showPreviewDesktop, setShowPreviewDesktop] = useState(false)
   const [showButtonChanged, setShowButtonChanged] = useState(false)
 
@@ -43,9 +43,9 @@ function ProjectPreview({ imgMobile, imgDesktop, alt, title, description, tecnol
                 </div>
               )}
 
-              <div className="github c-button c-button--outlined c-button--only-icon">
+              <a href={github} className="github c-button c-button--outlined c-button--only-icon" target="_blank" rel='noreferrer'>
                 <Icon iconSvg={<Github />} />
-              </div>
+              </a>
             </div>
             <div className="info__title">
               {title}

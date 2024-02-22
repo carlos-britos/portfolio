@@ -49,7 +49,7 @@ function Home() {
       </section>
 
       <SectionProjects title="Proyectos freelance" classes="freelance" />
-      <SectionProjects title="Proyectos de práctica" classes="practice" />
+      {/* <SectionProjects title="Proyectos de práctica" classes="practice" /> */}
       <SectionProjects title="Clones" classes="clone" />
     </main>
   )

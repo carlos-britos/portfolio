@@ -19,16 +19,36 @@ function Header() {
     };
   }, []);
 
+  // --- Dark or Light Mode ---
+
+  const [darkMode, setDarkMode] = useState(localStorage.getItem("theme") === "dark" ? true : false);
+
+  useEffect(() => {
+    document
+      .getElementsByTagName("HTML")[0]
+      .setAttribute("data-theme", localStorage.getItem("theme"));
+  }, [darkMode]);
+  
+  const toggleThemeChange = () => {
+    if (darkMode === false) {
+      localStorage.setItem("theme", "dark");
+      setDarkMode(true);
+    } else {
+      localStorage.setItem("theme", "light");
+      setDarkMode(false);
+    }
+  };
+
   return (
     <header className="header">
       <div className="header__wrapper">
-        {!isDesktop && <MenuMobile />}
+        {!isDesktop && <MenuMobile darkMode={ darkMode } toggleThemeChange={ toggleThemeChange } />}
         <Link to='/' className="header__logo header__logo--font">
           C<span>arlos </span>
           B<span>ritos</span>
           {/* <Icon iconSvg={<Logo />} /> */}
         </Link>
-        {isDesktop && <NavDesktop />}
+        {isDesktop && <NavDesktop darkMode={ darkMode } toggleThemeChange={ toggleThemeChange } />}
       </div>
     </header>
   )

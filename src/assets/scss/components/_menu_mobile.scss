@@ -32,7 +32,7 @@ html[data-theme="dark"] {
 	transition: .4s;
 	box-shadow: rgba(17, 17, 26, 0.1) 1px 0px 0px, rgba(17, 17, 26, 0.1) 8px 0px 24px, rgba(17, 17, 26, 0.1) 16px 0 48px;
 	overflow-x: hidden;
-  color: var(--white);
+  color: var(--menu-mobile-text-and-icons);
 
 	&::before,
 	&::after {
@@ -273,9 +273,10 @@ html[data-theme="dark"] {
 					display: grid;
 					grid-template-columns: 24px 1fr;
 					align-items: center;
-					gap: 1rem;
+					gap: .5rem;
 
           .icon-svg {
+						display: flex;
             fill: var(--menu-mobile-text-and-icons);
           }
 				}
